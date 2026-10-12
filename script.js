@@ -1,5 +1,5 @@
 
-vegaEmbed("#ramsar-map", "charts/ramsar_map.json", {
+vegaEmbed("#ramsar-map", "ramsar_map.json", {
     actions: false,
     renderer: "svg"
 })
@@ -15,7 +15,7 @@ vegaEmbed("#ramsar-map", "charts/ramsar_map.json", {
 
 vegaEmbed(
     "#ramsar-choropleth",
-    "charts/ramsar_choropleth.json",
+    "ramsar_choropleth.json",
     {
         actions: false,
         renderer: "svg"
@@ -29,7 +29,7 @@ vegaEmbed(
 });
 
 
-vegaEmbed("#ramsar-bar", "charts/ramsar_bar.json", {
+vegaEmbed("#ramsar-bar", "ramsar_bar.json", {
     actions: false,
     renderer: "svg"
 })
@@ -43,7 +43,7 @@ vegaEmbed("#ramsar-bar", "charts/ramsar_bar.json", {
 
 vegaEmbed(
     "#wetland-treemap",
-    "charts/wetland_treemap.json",
+    "wetland_treemap.json",
     {
         actions: false,
         renderer: "svg"
@@ -59,7 +59,7 @@ vegaEmbed(
 
 vegaEmbed(
     "#wetland-heatmap",
-    "charts/wetland_heatmap.json",
+    "wetland_heatmap.json",
     {
         actions: false,
         renderer: "svg"
