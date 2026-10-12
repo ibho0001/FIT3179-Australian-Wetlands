@@ -1,0 +1,68 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Which States Have the Most Ramsar Sites?",
+    "subtitle": "Number of internationally recognised wetland sites",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 650,
+  "height": 320,
+  "data": {
+    "url": "data/ramsar_sites_by_region.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.region != 'External territories and islands'"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 4
+  },
+  "encoding": {
+    "y": {
+      "field": "region",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null,
+      "axis": {
+        "labelFontSize": 12,
+        "labelLimit": 180
+      }
+    },
+    "x": {
+      "field": "ramsar_site_count",
+      "type": "quantitative",
+      "title": "Number of Ramsar sites",
+      "axis": {
+        "tickMinStep": 1,
+        "grid": true
+      }
+    },
+    "color": {
+      "condition": {
+        "test": "datum.region == 'New South Wales'",
+        "value": "#174d43"
+      },
+      "value": "#67ada8"
+    },
+    "tooltip": [
+      {
+        "field": "region",
+        "title": "State"
+      },
+      {
+        "field": "ramsar_site_count",
+        "title": "Ramsar sites"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

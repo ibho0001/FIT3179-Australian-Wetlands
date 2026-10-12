@@ -1,0 +1,99 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f1f5f1;
+    color: #243b35;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #174d43;
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+header p {
+    font-size: 20px;
+    color: #d5e9df;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 25px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #176b5b;
+    margin-top: 0;
+}
+
+footer {
+    background-color: #174d43;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
+
+.chart-annotation {
+    background-color: #e8f3ee;
+    border-left: 4px solid #168c91;
+    padding: 15px 20px;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    border-radius: 4px;
+}
+
+.chart-source {
+    font-size: 12px;
+    color: #777;
+    margin-top: 12px;
+}
+
+
+#ramsar-choropleth {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+
+.chart-container {
+    margin-top: 45px;
+    margin-bottom: 25px;
+}
+
+#wetland-heatmap {
+    max-width: 100%;
+    overflow-x: auto;
+}

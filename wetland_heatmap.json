@@ -1,0 +1,136 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Wetland Area vs Number of Mapped Polygons",
+    "subtitle": "Selected Victorian wetland types — darker cells indicate larger values",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 420,
+  "height": 390,
+  "data": {
+    "url": "data/victorian_wetland_types.json",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.attributes.wtlnd_type",
+      "as": "wetland_type"
+    },
+    {
+      "calculate": "toNumber(datum.attributes.total_area_ha)",
+      "as": "area"
+    },
+    {
+      "calculate": "toNumber(datum.attributes.wetland_count)",
+      "as": "count"
+    },
+    {
+      "window": [
+        {"op": "rank", "as": "area_rank"}
+      ],
+      "sort": [
+        {"field": "area", "order": "descending"}
+      ]
+    },
+    {
+      "filter": "datum.area_rank <= 12"
+    },
+    {
+      "fold": ["area", "count"],
+      "as": ["measure", "value"]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "value",
+          "as": "max_value"
+        }
+      ],
+      "groupby": ["measure"]
+    },
+    {
+      "calculate": "datum.value / datum.max_value",
+      "as": "normalised_value"
+    },
+    {
+      "calculate": "datum.measure == 'area' ? 'Mapped area' : 'Polygon count'",
+      "as": "measure_label"
+    }
+  ],
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 3,
+    "cornerRadius": 4
+  },
+  "encoding": {
+    "y": {
+      "field": "wetland_type",
+      "type": "nominal",
+      "sort": {
+        "field": "area",
+        "order": "descending"
+      },
+      "title": null,
+      "axis": {
+        "labelLimit": 270,
+        "labelFontSize": 11
+      }
+    },
+    "x": {
+      "field": "measure_label",
+      "type": "nominal",
+      "sort": ["Mapped area", "Polygon count"],
+      "title": null,
+      "axis": {
+        "orient": "top",
+        "labelAngle": 0
+      }
+    },
+    "color": {
+      "field": "normalised_value",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 1],
+        "range": ["#e2f0eb", "#176b5b"]
+      },
+      "legend": {
+        "title": "Relative intensity",
+        "format": ".0%"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "wetland_type",
+        "title": "Wetland type"
+      },
+      {
+        "field": "measure_label",
+        "title": "Measure"
+      },
+      {
+        "field": "value",
+        "title": "Actual value",
+        "format": ",.1f"
+      },
+      {
+        "field": "normalised_value",
+        "title": "Relative to maximum",
+        "format": ".1%"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

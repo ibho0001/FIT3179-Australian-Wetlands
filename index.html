@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia's Wetlands</title>
+    <link rel="stylesheet" href="style.css">
+    
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+</head>
+
+<body>
+
+   
+<header>
+    <h1>Australia's Wetlands</h1>
+    <p>A Vital Ecosystem Under Pressure</p>
+</header>
+
+<main>
+    <section>
+        <h2>01. Where are Australia's wetlands?</h2>
+        <p>Exploring the distribution of wetlands across Australia.</p>
+        <div id="ramsar-map"></div>
+
+<p class="chart-annotation">
+    <strong>What does this map show?</strong>
+    The teal regions represent Australia's internationally
+    important Ramsar wetlands. These protected and recognised
+    wetland sites are distributed across coastal and inland
+    environments, highlighting their geographical diversity.
+</p>
+
+<p class="chart-source">
+    Source: Australian Government, Department of Climate
+    Change, Energy, the Environment and Water —
+    Ramsar Wetlands of Australia.
+</p>
+        
+        <div id="ramsar-choropleth"></div>
+        
+<p class="chart-annotation">
+    <strong>What does this map show?</strong>
+    
+    New South Wales has the highest number of Ramsar
+    wetlands (13), followed by Victoria and Western
+    Australia (12 each). The Northern Territory has
+    fewer listed sites (2). These figures represent
+    the number of internationally recognised sites,
+    not their total geographical area.
+</p>
+
+
+<p class="chart-source">
+    Source: Australian Government, Department of Climate
+    Change, Energy, the Environment and Water —
+    Ramsar Wetlands of Australia.
+</p>
+
+
+<div id="ramsar-bar"></div>
+
+<p class="chart-annotation">
+    <strong>Key finding:</strong>
+    New South Wales leads with 13 Ramsar sites,
+    closely followed by Victoria and Western Australia
+    with 12 each. However, the number of listed sites
+    does not necessarily reflect how much wetland area
+    each state contains.
+</p>
+
+<p class="chart-source">
+    Source: Australian Government, Department of Climate
+    Change, Energy, the Environment and Water —
+    Ramsar Wetlands of Australia.
+</p>
+
+
+    </section>
+
+    
+<section>
+    <h2>02. Why do wetlands matter?</h2>
+
+    <p>
+        Wetlands come in many forms, from freshwater swamps
+        and lakes to coastal saltmarshes and mangroves.
+        Each type contributes to Australia's diverse
+        wetland ecosystems.
+    </p>
+
+
+    <p>
+        This visualisation compares the mapped area of
+        different wetland types across Victoria.
+        Larger rectangles represent greater wetland area.
+        Hover over each rectangle for more information.
+    </p>
+
+    <div id="wetland-treemap"></div>
+    
+<p class="chart-annotation">
+    <strong>Key finding:</strong>
+    Subtidal embayments occupy approximately 244,451
+    hectares in the Victorian Wetland Inventory, making
+    them the largest mapped category by area.
+    Temporary freshwater lakes also occupy a substantial
+    area, at approximately 102,329 hectares.
+    This highlights the diversity of Victoria's
+    coastal and inland wetland environments.
+</p>
+
+
+    <p class="chart-source">
+        Source: Victorian Government,
+        Victorian Wetland Inventory (Current).
+    </p>
+
+    
+<div class="chart-container">
+    <div id="wetland-heatmap"></div>
+
+    
+<p class="chart-annotation">
+    <strong>Key finding:</strong>
+    Subtidal embayments cover approximately 244,451 hectares
+    but consist of only 3 mapped polygons. In contrast,
+    small dams and storages (under 8 ha) account for more
+    than 363,000 mapped polygons, despite covering only
+    about 56,766 hectares. This demonstrates that the
+    number of mapped features does not necessarily reflect
+    the total area they occupy.
+</p>
+
+
+    <p class="chart-source">
+        Source: Victorian Government —
+        Victorian Wetland Inventory (Current).
+    </p>
+</div>
+
+</section>
+
+
+    <section>
+        <h2>03. Wetlands under pressure</h2>
+        <p>Exploring environmental changes affecting wetlands.</p>
+    </section>
+
+    <section>
+        <h2>04. Protecting Australia's wetlands</h2>
+        <p>Understanding conservation and protection efforts.</p>
+    </section>
+</main>
+
+<footer>
+    <p>FIT3179 Data Visualisation 2 | 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

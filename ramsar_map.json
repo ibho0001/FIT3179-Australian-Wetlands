@@ -1,0 +1,83 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australia's Ramsar Wetlands",
+    "subtitle": "Internationally important wetland sites across Australia",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 800,
+  "height": 440,
+  "projection": {
+  "type": "mercator",
+  "center": [134, -25],
+  "scale": 550
+},
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.id == 36 || datum.id == '036'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e2ebe5",
+        "stroke": "#799b8c",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "data/ramsar_wetlands_map_fixed.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#168c91",
+        "stroke": "#08616a",
+        "strokeWidth": 0.3,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.RAMSAR_NAME",
+            "title": "Ramsar site"
+          },
+          {
+            "field": "properties.WETLAND_NAME",
+            "title": "Wetland"
+          },
+          {
+            "field": "properties.STATE",
+            "title": "State"
+          },
+          {
+            "field": "properties.AREA_HA",
+            "title": "Mapped area (ha)",
+            "format": ",.1f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

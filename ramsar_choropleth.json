@@ -1,0 +1,70 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Ramsar Wetlands by State",
+    "subtitle": "Number of internationally important Ramsar sites",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 800,
+  "height": 440,
+  "projection": {
+    "type": "mercator",
+    "center": [134, -25],
+    "scale": 550
+  },
+  "data": {
+    "url": "data/australian_states_vega_fixed.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {
+          "url": "data/ramsar_sites_by_region.csv"
+        },
+        "key": "region",
+        "fields": ["ramsar_site_count"]
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "color": {
+      "field": "ramsar_site_count",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "tealblues"
+      },
+      "legend": {
+        "title": "Number of Ramsar sites"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.STATE_NAME",
+        "title": "State"
+      },
+      {
+        "field": "ramsar_site_count",
+        "title": "Ramsar sites",
+        "format": ".0f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -1,0 +1,322 @@
+{
+ "displayFieldName": "",
+ "fieldAliases": {
+  "wtlnd_type": "wtlnd_type",
+  "total_area_ha": "total_area_ha",
+  "wetland_count": "wetland_count"
+ },
+ "fields": [
+  {
+   "name": "wtlnd_type",
+   "type": "esriFieldTypeString",
+   "alias": "wtlnd_type",
+   "length": 40
+  },
+  {
+   "name": "total_area_ha",
+   "type": "esriFieldTypeDouble",
+   "alias": "total_area_ha"
+  },
+  {
+   "name": "wetland_count",
+   "type": "esriFieldTypeInteger",
+   "alias": "wetland_count"
+  }
+ ],
+ "features": [
+  {
+   "attributes": {
+    "wtlnd_type": "Aquaculture pond",
+    "total_area_ha": 44.708530442870391,
+    "wetland_count": 62
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Coastal saltmarsh",
+    "total_area_ha": 19388.815756745891,
+    "wetland_count": 193
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Dam/storage \u003c 8ha",
+    "total_area_ha": 56765.892966800842,
+    "wetland_count": 363408
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Dam/storage \u003e= 8ha",
+    "total_area_ha": 87830.60354899909,
+    "wetland_count": 350
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Estuarine wetland",
+    "total_area_ha": 4804.7978267665903,
+    "wetland_count": 76
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Estuary",
+    "total_area_ha": 44700.903772322948,
+    "wetland_count": 174
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Excavation pond",
+    "total_area_ha": 901.71162947972607,
+    "wetland_count": 208
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Intertidal flat",
+    "total_area_ha": 72466.805472733002,
+    "wetland_count": 42
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Mangrove",
+    "total_area_ha": 59.160932201240001,
+    "wetland_count": 4
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Peatlands",
+    "total_area_ha": 4524.0679313201317,
+    "wetland_count": 3391
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent freshwater lake",
+    "total_area_ha": 30332.480896967998,
+    "wetland_count": 398
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent freshwater marsh or meadow",
+    "total_area_ha": 2663.0971013820831,
+    "wetland_count": 170
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent freshwater swamp",
+    "total_area_ha": 1678.0956172450351,
+    "wetland_count": 259
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent paperbark swamp",
+    "total_area_ha": 569.68943619870595,
+    "wetland_count": 41
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent river red gum swamp",
+    "total_area_ha": 6774.7121741313867,
+    "wetland_count": 131
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent saline lake",
+    "total_area_ha": 79180.997232564143,
+    "wetland_count": 180
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent saline wetland",
+    "total_area_ha": 12089.091574532398,
+    "wetland_count": 38
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent salt marsh",
+    "total_area_ha": 3559.303445756831,
+    "wetland_count": 59
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent shallow wetland/claypan",
+    "total_area_ha": 2378.2213537380712,
+    "wetland_count": 190
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent shrub swamp",
+    "total_area_ha": 962.76495473003604,
+    "wetland_count": 54
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Permanent tall marsh",
+    "total_area_ha": 458.06539548455703,
+    "wetland_count": 12
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Salt pan/flat",
+    "total_area_ha": 5852.3999635253322,
+    "wetland_count": 422
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Salt works",
+    "total_area_ha": 1170.19795342372,
+    "wetland_count": 10
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Settling Pond",
+    "total_area_ha": 43.490888560340757,
+    "wetland_count": 332
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Sewage treatment pond",
+    "total_area_ha": 5374.3888258174975,
+    "wetland_count": 541
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Stormwater treatment pond",
+    "total_area_ha": 1052.7129609647152,
+    "wetland_count": 857
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Stormwater treatment wetland/pond",
+    "total_area_ha": 0.68873224496300001,
+    "wetland_count": 1
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Subtidal embayment",
+    "total_area_ha": 244451.32152420003,
+    "wetland_count": 3
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary black box swamp",
+    "total_area_ha": 240.305945989626,
+    "wetland_count": 39
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary freshwater lake",
+    "total_area_ha": 102328.96258756849,
+    "wetland_count": 3100
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary freshwater marsh or meadow",
+    "total_area_ha": 53227.556932440995,
+    "wetland_count": 6190
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary freshwater swamp",
+    "total_area_ha": 24952.153415224173,
+    "wetland_count": 18674
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary lignum swamp",
+    "total_area_ha": 20511.476377184543,
+    "wetland_count": 998
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary paperbark swamp",
+    "total_area_ha": 4642.5750497745876,
+    "wetland_count": 982
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary river red gum swamp",
+    "total_area_ha": 71857.251091632279,
+    "wetland_count": 4700
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary saline lake",
+    "total_area_ha": 18385.292402903779,
+    "wetland_count": 470
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary saline swamp",
+    "total_area_ha": 7844.2307988988005,
+    "wetland_count": 217
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary salt marsh",
+    "total_area_ha": 10990.396946433631,
+    "wetland_count": 2800
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary shallow wetland/claypan",
+    "total_area_ha": 74501.029202603109,
+    "wetland_count": 15063
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary shrub swamp",
+    "total_area_ha": 20002.951793624743,
+    "wetland_count": 2659
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Temporary Tall Marsh",
+    "total_area_ha": 1671.8851525434102,
+    "wetland_count": 38
+   }
+  },
+  {
+   "attributes": {
+    "wtlnd_type": "Urban lake",
+    "total_area_ha": 132.81627116180999,
+    "wetland_count": 4
+   }
+  }
+ ]
+}
