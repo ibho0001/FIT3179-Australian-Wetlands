@@ -11,7 +11,7 @@
   "width": 650,
   "height": 320,
   "data": {
-    "url": "data/ramsar_sites_by_region.csv"
+    "url": "ramsar_sites_by_region.csv"
   },
   "transform": [
     {
