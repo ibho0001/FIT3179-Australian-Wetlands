@@ -38,7 +38,7 @@
     },
     {
       "data": {
-        "url": "data/ramsar_wetlands_map_fixed.geojson",
+        "url": "ramsar_wetlands_map_fixed.geojson",
         "format": {
           "type": "json",
           "property": "features"
