@@ -18,7 +18,7 @@
   "data": [
     {
       "name": "wetlands",
-      "url": "data/victorian_wetland_types.json",
+      "url": "victorian_wetland_types.json",
       "format": {
         "type": "json",
         "property": "features"
