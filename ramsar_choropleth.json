@@ -16,7 +16,7 @@
     "scale": 550
   },
   "data": {
-    "url": "data/australian_states_vega_fixed.geojson",
+    "url": "australian_states_vega_fixed.geojson",
     "format": {
       "type": "json",
       "property": "features"
@@ -27,7 +27,7 @@
       "lookup": "properties.STATE_NAME",
       "from": {
         "data": {
-          "url": "data/ramsar_sites_by_region.csv"
+          "url": "ramsar_sites_by_region.csv"
         },
         "key": "region",
         "fields": ["ramsar_site_count"]
