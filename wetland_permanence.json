@@ -1,0 +1,109 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Permanent vs Temporary Wetlands",
+    "subtitle": "Mapped wetland area in Victoria, by type",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 680,
+  "height": 340,
+  "data": {
+    "url": "data/victorian_wetland_types.json",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.attributes.wtlnd_type",
+      "as": "wetland_type"
+    },
+    {
+      "calculate": "toNumber(datum.attributes.total_area_ha)",
+      "as": "area"
+    },
+    {
+      "filter": "test(/^(Permanent|Temporary) /, datum.wetland_type)"
+    },
+    {
+      "calculate": "split(datum.wetland_type, ' ')[0]",
+      "as": "duration"
+    },
+    {
+      "calculate": "replace(datum.wetland_type, /^(Permanent|Temporary) /, '')",
+      "as": "category"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "area",
+          "as": "total_area"
+        }
+      ],
+      "groupby": ["category", "duration"]
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 2
+  },
+  "encoding": {
+    "y": {
+      "field": "category",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x",
+      "axis": {
+        "labelLimit": 210,
+        "labelFontSize": 11
+      }
+    },
+    "x": {
+      "field": "total_area",
+      "type": "quantitative",
+      "title": "Mapped area (hectares)",
+      "stack": "zero",
+      "axis": {
+        "format": "~s"
+      }
+    },
+    "color": {
+      "field": "duration",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Permanent", "Temporary"],
+        "range": ["#174d43", "#79bcb4"]
+      },
+      "legend": {
+        "title": "Wetland duration",
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "category",
+        "title": "Wetland type"
+      },
+      {
+        "field": "duration",
+        "title": "Duration"
+      },
+      {
+        "field": "total_area",
+        "title": "Mapped area (ha)",
+        "format": ",.0f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}
