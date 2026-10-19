@@ -58,14 +58,11 @@ vegaEmbed(
 
 
 
-vegaEmbed(
-    "#wetland-heatmap",
-    "wetland_heatmap.json",
-    {
-        actions: false,
-        renderer: "svg"
-    }
-)
+
+vegaEmbed("#wetland-heatmap", "wetland_heatmap.json", {
+    actions: false,
+    renderer: "svg"
+})
 .then(() => {
     console.log("Wetland heatmap loaded successfully.");
 })
@@ -73,17 +70,14 @@ vegaEmbed(
     console.error("Heatmap loading error:", error);
 });
 
-vegaEmbed(
-    "#wetland-permanence",
-    "wetland_permanence.json",
-    {
-        actions: false,
-        renderer: "svg"
-    }
-)
+vegaEmbed("#wetland-permanence", "wetland_permanence.json", {
+    actions: false,
+    renderer: "svg"
+})
 .then(() => {
     console.log("Wetland permanence chart loaded successfully.");
 })
 .catch(error => {
     console.error("Wetland permanence chart error:", error);
 });
+
