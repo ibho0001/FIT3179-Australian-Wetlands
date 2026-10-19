@@ -24,7 +24,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/australian_states_vega_fixed.geojson",
+        "url": "australian_states_vega_fixed.geojson",
         "format": {
           "type": "json",
           "property": "features"
@@ -45,7 +45,7 @@
     },
     {
       "data": {
-        "url": "data/ramsar_hexbin.geojson",
+        "url": "ramsar_hexbin.geojson",
         "format": {
           "type": "json",
           "property": "features"
