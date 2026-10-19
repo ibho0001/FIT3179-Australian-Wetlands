@@ -33,7 +33,7 @@
     },
     {
       "data": {
-        "url": "data/ramsar_site_symbols.csv"
+        "url": "ramsar_site_symbols.csv"
       },
       "mark": {
         "type": "circle",
