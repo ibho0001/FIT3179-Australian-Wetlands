@@ -11,7 +11,7 @@
   "width": 580,
   "height": 380,
   "data": {
-    "url": "data/ramsar_count_area_ranks.csv"
+    "url": "ramsar_count_area_ranks.csv"
   },
   "transform": [
     {
