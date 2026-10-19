@@ -13,7 +13,8 @@
   "projection": {
     "type": "mercator",
     "center": [134, -25],
-    "scale": 550
+    "scale": 570,
+    "translate":[400,195]
   },
   "data": {
     "url": "australian_states_vega_fixed.geojson",
@@ -41,15 +42,28 @@
   },
   "encoding": {
     "color": {
-      "field": "ramsar_site_count",
-      "type": "quantitative",
-      "scale": {
-        "scheme": "tealblues"
-      },
-      "legend": {
-        "title": "Number of Ramsar sites"
-      }
-    },
+  "field": "ramsar_site_count",
+  "type": "quantitative",
+  "scale": {
+    "range": ["#b9ddd8", "#2c5f91"]
+  },
+  "legend": {
+    "title": "Number of Ramsar sites",
+    "orient": "none",
+    "direction": "horizontal",
+    "legendX": 20,
+    "legendY": 65,
+    "gradientLength": 140,
+    "gradientThickness": 12,
+    "titleFont": "DM Sans",
+    "labelFont": "DM Sans",
+    "titleFontSize": 12,
+    "labelFontSize": 11,
+    "titleColor": "#0d4f57",
+    "labelColor": "#243b35",
+    "format": ".0f"
+  }
+},
     "tooltip": [
       {
         "field": "properties.STATE_NAME",
