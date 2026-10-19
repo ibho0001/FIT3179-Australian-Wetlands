@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Australia's Wetlands</title>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap"
+  rel="stylesheet"
+>
+
     <link rel="stylesheet" href="style.css">
     
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -25,14 +34,86 @@
     <section>
         <h2>01. Where are Australia's wetlands?</h2>
         <p>Exploring the distribution of wetlands across Australia.</p>
+
+<div class="map-info-layout choropleth-layout">
+
+    <div class="map-column">
         <div id="ramsar-map"></div>
+        
+
+<div class="map-legend-panel">
+  <h4>Reading the map</h4>
+
+  <div class="legend-item">
+    <span class="legend-swatch"
+          style="background:#168c91;"></span>
+    <span>Hexagons show Ramsar site locations</span>
+  </div>
+
+  <div class="legend-item">
+    <span class="legend-swatch"
+          style="background:#e2ebe5; border:1px solid #799b8c;"></span>
+    <span>Pale green shows Australian land</span>
+  </div>
+
+  <p>
+    Darker hexagons contain more sites.
+    Hover to view site counts. Hexagons show
+    site concentration, not wetland area.
+  </p>
+</div>
+
+
+    </div>
+
+    <aside class="wetland-info-panel">
+        <h3>Wetlands at a Glance</h3>
+
+        <div class="info-stat">
+            <span class="stat-number">67</span>
+            <span class="stat-label">
+                Internationally recognised Ramsar sites
+            </span>
+        </div>
+
+        <h4>Why are wetlands important?</h4>
+
+        <p>
+            <strong>Biodiversity:</strong>
+            Wetlands provide habitat for waterbirds,
+            fish and other wildlife.
+        </p>
+
+        <p>
+            <strong>Water regulation:</strong>
+            Wetlands can store water and help
+            moderate flooding.
+        </p>
+
+        <p>
+            <strong>Ecosystem protection:</strong>
+            Wetlands support important ecological
+            processes and species.
+        </p>
+
+        <p class="info-note">
+            Ramsar sites represent internationally
+            important wetlands, not every wetland
+            in Australia.
+        </p>
+    </aside>
+
+</div>
+
 
 <p class="chart-annotation">
     <strong>What does this map show?</strong>
-    The teal regions represent Australia's internationally
-    important Ramsar wetlands. These protected and recognised
-    wetland sites are distributed across coastal and inland
-    environments, highlighting their geographical diversity.
+      Ramsar sites are concentrated in south-eastern Australia,
+  particularly Victoria and southern New South Wales.
+  Darker hexagons indicate more Ramsar sites within the
+  same geographical area, while lighter hexagons represent
+  fewer sites. This highlights the uneven distribution of
+  internationally important wetlands across Australia.
 </p>
 
 <p class="chart-source">
@@ -41,7 +122,38 @@
     Ramsar Wetlands of Australia.
 </p>
         
+
+<div class="map-info-layout choropleth-layout">
+
+    <div class="map-column">
         <div id="ramsar-choropleth"></div>
+    </div>
+
+    <aside class="wetland-info-panel">
+        <h3>Ramsar Sites by State</h3>
+
+        <div class="info-stat">
+            <span class="stat-number">13</span>
+            <span class="stat-label">
+                New South Wales — most Ramsar sites
+            </span>
+        </div>
+
+        <h4>Top three states</h4>
+
+        <p><strong>NSW:</strong> 13 Ramsar sites</p>
+        <p><strong>Victoria:</strong> 12 Ramsar sites</p>
+        <p><strong>Western Australia:</strong> 12 Ramsar sites</p>
+
+        <p class="info-note">
+            Darker shading represents a greater
+            number of Ramsar sites, not a larger
+            total wetland area.
+        </p>
+    </aside>
+
+</div>
+
         
 <p class="chart-annotation">
     <strong>What does this map show?</strong>
