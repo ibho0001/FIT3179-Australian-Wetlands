@@ -117,4 +117,19 @@ vegaEmbed("#ramsar-total-area", "ramsar_total_area.json", {
 .then(() => console.log("Chart 11 loaded successfully."))
 .catch(error => console.error("Chart 11 error:", error));
 
+vegaEmbed(
+    "#ramsar-rank-slopegraph",
+    "ramsar_rank_slopegraph.json",
+    {
+        actions: false,
+        renderer: "svg"
+    }
+)
+.then(() => {
+    console.log("Ramsar slopegraph loaded successfully.");
+})
+.catch(error => {
+    console.error("Slopegraph loading error:", error);
+});
+
 
