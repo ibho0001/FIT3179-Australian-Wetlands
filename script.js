@@ -29,16 +29,6 @@ vegaEmbed(
 });
 
 
-vegaEmbed("#ramsar-bar", "ramsar_bar.json", {
-    actions: false,
-    renderer: "svg"
-})
-.then(() => {
-    console.log("Ramsar bar chart loaded successfully.");
-})
-.catch(error => {
-    console.error("Bar chart error:", error);
-});
 
 
 vegaEmbed(
