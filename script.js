@@ -81,3 +81,40 @@ vegaEmbed("#wetland-permanence", "wetland_permanence.json", {
     console.error("Wetland permanence chart error:", error);
 });
 
+
+vegaEmbed("#inland-water-trends", "inland_water_trends.json", {
+    actions: false,
+    renderer: "svg"
+})
+.then(() => console.log("Chart 7 loaded successfully."))
+.catch(error => console.error("Chart 7 error:", error));
+
+vegaEmbed("#inland-water-dumbbell", "inland_water_dumbbell.json", {
+    actions: false,
+    renderer: "svg"
+})
+.then(() => console.log("Chart 8 loaded successfully."))
+.catch(error => console.error("Chart 8 error:", error));
+
+vegaEmbed("#ramsar-symbol-map", "ramsar_symbol_map.json", {
+    actions: false,
+    renderer: "svg"
+})
+.then(() => console.log("Chart 9 loaded successfully."))
+.catch(error => console.error("Chart 9 error:", error));
+
+vegaEmbed("#ramsar-area-boxplot", "ramsar_area_boxplot.json", {
+    actions: false,
+    renderer: "svg"
+})
+.then(() => console.log("Chart 10 loaded successfully."))
+.catch(error => console.error("Chart 10 error:", error));
+
+vegaEmbed("#ramsar-total-area", "ramsar_total_area.json", {
+    actions: false,
+    renderer: "svg"
+})
+.then(() => console.log("Chart 11 loaded successfully."))
+.catch(error => console.error("Chart 11 error:", error));
+
+
