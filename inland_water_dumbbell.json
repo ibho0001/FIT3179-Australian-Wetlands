@@ -11,7 +11,7 @@
   "width": 700,
   "height": 180,
   "data": {
-    "url": "data/australian_inland_water_1988_2024.csv"
+    "url": "australian_inland_water_1988_2024.csv"
   },
   "transform": [
     {
