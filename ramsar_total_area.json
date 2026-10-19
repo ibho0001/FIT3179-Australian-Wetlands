@@ -1,0 +1,107 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where Is Ramsar Wetland Area Concentrated?",
+    "subtitle": "Total mapped Ramsar site area by state or territory",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 700,
+  "height": 340,
+  "data": {
+    "url": "data/ramsar_site_symbols.csv"
+  },
+  "transform": [
+    {
+      "filter": "isValid(datum.mapped_area_ha) && datum.mapped_area_ha > 0"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "mapped_area_ha",
+          "as": "total_area"
+        },
+        {
+          "op": "count",
+          "as": "site_count"
+        }
+      ],
+      "groupby": ["state"]
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": {
+        "field": "total_area",
+        "order": "descending"
+      },
+      "title": null,
+      "axis": {
+        "labelFontSize": 12
+      }
+    },
+    "x": {
+      "field": "total_area",
+      "type": "quantitative",
+      "title": "Total mapped Ramsar area (hectares)",
+      "scale": {
+        "zero": true
+      },
+      "axis": {
+        "format": "~s"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#A9CFC5",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x2": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 170,
+        "color": "#176B5B",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State or territory"
+          },
+          {
+            "field": "total_area",
+            "title": "Total mapped area (ha)",
+            "format": ",.0f"
+          },
+          {
+            "field": "site_count",
+            "title": "Ramsar sites"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

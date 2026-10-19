@@ -1,0 +1,69 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How Much Do Ramsar Site Sizes Vary?",
+    "subtitle": "Distribution of mapped Ramsar site areas by state and territory",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 690,
+  "height": 360,
+  "data": {
+    "url": "data/ramsar_site_symbols.csv"
+  },
+  "transform": [
+    {
+      "filter": "isValid(datum.mapped_area_ha) && datum.mapped_area_ha > 0"
+    },
+    {
+      "filter": "isValid(datum.state) && datum.state != ''"
+    }
+  ],
+  "mark": {
+    "type": "boxplot",
+    "extent": 1.5,
+    "size": 24,
+    "color": "#69ADA8",
+    "median": {
+      "color": "#174D43",
+      "strokeWidth": 2
+    },
+    "outliers": {
+      "filled": true,
+      "color": "#C68658",
+      "size": 55
+    }
+  },
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "title": null,
+      "sort": "ascending",
+      "axis": {
+        "labelFontSize": 11,
+        "labelLimit": 180
+      }
+    },
+    "x": {
+      "field": "mapped_area_ha",
+      "type": "quantitative",
+      "title": "Mapped site area (hectares)",
+      "scale": {
+        "type": "log"
+      },
+      "axis": {
+        "format": "~s",
+        "gridColor": "#e5ebe8"
+      }
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

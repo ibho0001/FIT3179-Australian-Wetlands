@@ -1,0 +1,113 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How Has Inland Water Coverage Changed?",
+    "subtitle": "Comparing 1988 with 2024 (hectares)",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 700,
+  "height": 180,
+  "data": {
+    "url": "data/australian_inland_water_1988_2024.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.year == 1988 || datum.year == 2024"
+    },
+    {
+      "fold": ["perennial_ha", "non_perennial_ha"],
+      "as": ["type", "area"]
+    },
+    {
+      "calculate": "datum.type == 'perennial_ha' ? 'Perennial' : 'Non-perennial'",
+      "as": "water_type"
+    },
+    {
+      "calculate": "toNumber(datum.area)",
+      "as": "area_numeric"
+    },
+    {
+      "calculate": "toString(datum.year)",
+      "as": "year_label"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "water_type",
+      "type": "nominal",
+      "sort": ["Perennial", "Non-perennial"],
+      "axis": {
+        "title": null,
+        "labelFontSize": 13
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "stroke": "#A6B9B4",
+        "strokeWidth": 4
+      },
+      "encoding": {
+        "x": {
+          "field": "area_numeric",
+          "type": "quantitative",
+          "title": "Inland water coverage (hectares)",
+          "scale": {"zero": true},
+          "axis": {"format": "~s"}
+        },
+        "detail": {
+          "field": "water_type"
+        },
+        "order": {
+          "field": "area_numeric",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 200,
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "area_numeric",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "year_label",
+          "type": "nominal",
+          "scale": {
+            "domain": ["1988", "2024"],
+            "range": ["#79bcb4", "#174d43"]
+          },
+          "legend": {
+            "title": "Year",
+            "orient": "bottom"
+          }
+        },
+        "tooltip": [
+          {"field": "water_type", "title": "Water body type"},
+          {"field": "year_label", "title": "Year"},
+          {
+            "field": "area_numeric",
+            "title": "Coverage (ha)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "background": "white"
+  }
+}

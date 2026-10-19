@@ -1,0 +1,107 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australia's Changing Inland Waters",
+    "subtitle": "Annual extent of perennial and non-perennial inland water bodies, 1988–2024",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 750,
+  "height": 350,
+  "data": {
+    "url": "data/australian_inland_water_1988_2024.csv"
+  },
+  "transform": [
+    {
+      "fold": ["perennial_ha", "non_perennial_ha"],
+      "as": ["water_type", "area_ha"]
+    },
+    {
+      "calculate": "datum.water_type == 'perennial_ha' ? 'Perennial' : 'Non-perennial'",
+      "as": "water_label"
+    },
+    {
+      "calculate": "toNumber(datum.area_ha)",
+      "as": "area_numeric"
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 45
+    },
+    "strokeWidth": 2.5
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "title": "Year",
+      "scale": {
+        "domain": [1988, 2024]
+      },
+      "axis": {
+        "format": "d",
+        "tickCount": 10
+      }
+    },
+    "y": {
+      "field": "area_numeric",
+      "type": "quantitative",
+      "title": "Inland water extent (hectares)",
+      "axis": {
+        "format": "~s"
+      },
+      "scale": {
+        "zero": true
+      }
+    },
+    "color": {
+      "field": "water_label",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Perennial", "Non-perennial"],
+        "range": ["#174d43", "#69b7bc"]
+      },
+      "legend": {
+        "title": "Water body type",
+        "orient": "bottom"
+      }
+    },
+    "detail": {
+      "field": "water_label"
+    },
+    "tooltip": [
+      {
+        "field": "year",
+        "type": "quantitative",
+        "title": "Year",
+        "format": "d"
+      },
+      {
+        "field": "water_label",
+        "title": "Water type"
+      },
+      {
+        "field": "area_numeric",
+        "type": "quantitative",
+        "title": "Extent (ha)",
+        "format": ",.0f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "gridColor": "#e5ebe8"
+    },
+    "background": "white"
+  }
+}

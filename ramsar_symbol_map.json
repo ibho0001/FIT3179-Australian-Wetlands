@@ -1,0 +1,94 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australia's Ramsar Wetlands by Size",
+    "subtitle": "Larger circles represent greater mapped wetland area",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 800,
+  "height": 440,
+  "projection": {
+    "type": "mercator",
+    "center": [134, -25],
+    "scale": 550
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/australian_states_vega_fixed.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e2ebe5",
+        "stroke": "#789889",
+        "strokeWidth": 0.7
+      }
+    },
+    {
+      "data": {
+        "url": "data/ramsar_site_symbols.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "color": "#168c91",
+        "opacity": 0.65,
+        "stroke": "#174d43",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "mapped_area_ha",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "range": [35, 1500]
+          },
+          "legend": {
+            "title": "Mapped area (ha)",
+            "format": "~s"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "ramsar_name",
+            "title": "Ramsar site"
+          },
+          {
+            "field": "state",
+            "title": "State or territory"
+          },
+          {
+            "field": "mapped_area_ha",
+            "title": "Mapped area (ha)",
+            "format": ",.0f"
+          },
+          {
+            "field": "mapped_polygon_count",
+            "title": "Mapped polygons"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}
