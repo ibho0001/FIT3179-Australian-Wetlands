@@ -1,0 +1,122 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Hexagonal density map of Australian Ramsar wetland sites",
+  "title": {
+    "text": "Where Are Australia's Ramsar Sites Concentrated?",
+    "subtitle": "Number of Ramsar site locations within each hexagonal grid cell",
+    "anchor": "start",
+    "font": "DM Sans",
+    "fontSize": 20,
+    "color": "#174d43",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#62736d"
+  },
+  "width": 750,
+  "height": 340,
+  "projection": {
+    "type": "mercator",
+    "center": [134, -28],
+    "scale": 480,
+    "translate": [375, 170]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/australian_states_vega_fixed.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e2ebe5",
+        "stroke": "#799b8c",
+        "strokeWidth": 0.7
+      },
+      "encoding": {
+        "shape": {
+          "field": "geometry",
+          "type": "geojson"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/ramsar_hexbin.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1,
+        "opacity": 0.95
+      },
+      "encoding": {
+        "shape": {
+          "field": "geometry",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "properties.site_count",
+          "type": "ordinal",
+          "title": "Ramsar sites per hexagon",
+          "scale": {
+            "domain": [1,2,3],
+            "range":[
+               "#b9e3d9",
+            "#4ca8bd",
+            "#245782"  
+            ]
+          },
+          "legend": {
+              "title": "Ramsar sites per hexagon",
+  "orient": "bottom",
+  "direction": "horizontal",
+  "columns": 3,
+  "symbolType": "square",
+  "symbolSize": 250,
+  "symbolStrokeWidth": 0,
+  "labelExpr": "datum.label == '1' ? '1 site' : datum.label + ' sites'",
+  "titleFont": "DM Sans",
+  "labelFont": "DM Sans",
+  "titleFontSize": 14,
+  "labelFontSize": 13,
+  "titleColor": "#0d4f57",
+  "labelColor": "#345b55",
+  "titleLimit": 350,
+  "titlePadding": 10,
+  "columnPadding": 30,
+  "symbolOffset": 6,
+  "offset": 10
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.site_count",
+            "type": "quantitative",
+            "title": "Number of Ramsar sites",
+            "format": ".0f"
+          },
+          {
+            "field": "properties.site_names",
+            "type": "nominal",
+            "title": "Sites in this hexagon"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "background": "white",
+    "view": {
+      "stroke": null
+    },
+    "font": "DM Sans"
+  }
+}
