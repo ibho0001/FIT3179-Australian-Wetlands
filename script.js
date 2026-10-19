@@ -57,6 +57,7 @@ vegaEmbed(
 });
 
 
+
 vegaEmbed(
     "#wetland-heatmap",
     "wetland_heatmap.json",
@@ -69,7 +70,8 @@ vegaEmbed(
     console.log("Wetland heatmap loaded successfully.");
 })
 .catch(error => {
-
+    console.error("Heatmap loading error:", error);
+});
 
 vegaEmbed(
     "#wetland-permanence",
@@ -84,7 +86,4 @@ vegaEmbed(
 })
 .catch(error => {
     console.error("Wetland permanence chart error:", error);
-});
-
-    console.error("Heatmap loading error:", error);
 });
