@@ -1,0 +1,10 @@
+state_code,region,site_count,mapped_area_ha,count_rank,area_rank
+NSW,New South Wales,13,373481.39,1,6
+VIC,Victoria,12,332118.16,2,7
+QLD,Queensland,5,591835.99,7,4
+WA,Western Australia,12,515123.39,2,5
+SA,South Australia,6,2355029.42,5,1
+TAS,Tasmania,10,26613.42,4,8
+NT,Northern Territory,2,2137602.6,8,2
+ACT,Australian Capital Territory,1,350.19,9,9
+EXT,External territories and islands,6,1978370.98,5,3

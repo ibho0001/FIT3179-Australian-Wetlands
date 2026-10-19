@@ -1,0 +1,143 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Do More Ramsar Sites Mean More Wetland Area?",
+    "subtitle": "Comparing state rankings by site count and mapped area",
+    "fontSize": 20,
+    "anchor": "start",
+    "color": "#174d43"
+  },
+  "width": 580,
+  "height": 380,
+  "data": {
+    "url": "data/ramsar_count_area_ranks.csv"
+  },
+  "transform": [
+    {
+      "fold": ["count_rank", "area_rank"],
+      "as": ["ranking_type", "rank"]
+    },
+    {
+      "calculate": "datum.ranking_type == 'count_rank' ? 'Site count' : 'Mapped area'",
+      "as": "ranking_label"
+    },
+    {
+      "calculate": "toNumber(datum.rank)",
+      "as": "rank_numeric"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "ranking_label",
+      "type": "nominal",
+      "sort": ["Site count", "Mapped area"],
+      "axis": {
+        "title": null,
+        "orient": "top",
+        "labelAngle": 0,
+        "labelFontSize": 13,
+        "labelFontWeight": "bold"
+      }
+    },
+    "y": {
+      "field": "rank_numeric",
+      "type": "quantitative",
+      "scale": {
+        "domain": [1, 9],
+        "reverse": true
+      },
+      "axis": {
+        "title": "Rank (1 = highest)",
+        "tickMinStep": 1,
+        "grid": true
+      }
+    },
+    "color": {
+      "condition": {
+        "test": "datum.region == 'New South Wales' || datum.region == 'South Australia' || datum.region == 'Northern Territory'",
+        "value": "#176b5b"
+      },
+      "value": "#b8c9c3"
+    },
+    "detail": {
+      "field": "region"
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Region"
+          },
+          {
+            "field": "rank_numeric",
+            "title": "Rank",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 95
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Region"
+          },
+          {
+            "field": "ranking_label",
+            "title": "Ranking based on"
+          },
+          {
+            "field": "rank_numeric",
+            "title": "Rank",
+            "format": ".0f"
+          }
+        ]
+      }
+    }, 
+    
+{
+  "transform": [
+    {
+      "filter": "datum.ranking_type == 'area_rank'"
+    }
+  ],
+  "mark": {
+    "type": "text",
+    "align": "left",
+    "dx": 12,
+    "fontSize": 11,
+    "fontWeight": "bold"
+  },
+  "encoding": {
+    "text": {
+      "field": "state_code",
+      "type": "nominal"
+    },
+    "color": {
+      "value": "#174d43"
+    }
+  }
+}
+
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}
