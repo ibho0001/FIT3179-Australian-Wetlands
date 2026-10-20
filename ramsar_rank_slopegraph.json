@@ -8,8 +8,8 @@
     "anchor": "start",
     "color": "#174d43"
   },
-  "width": 580,
-  "height": 380,
+  "width": 950,
+  "height": 400,
   "data": {
     "url": "ramsar_count_area_ranks.csv"
   },
