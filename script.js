@@ -21,7 +21,7 @@ const chartFontConfig = {
     }
 };
 
-vegaEmbed("#ramsar-map", "charts/ramsar_hexbin.json", 
+vegaEmbed("#ramsar-map", "ramsar_hexbin.json", 
     
 {
      actions: false,
