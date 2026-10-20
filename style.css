@@ -564,3 +564,11 @@ section h3 {
     width: 100%;
 }
 
+
+/* Centre Chart 3 — Ramsar Ranking Slopegraph */
+#ramsar-rank-slopegraph {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
