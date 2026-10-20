@@ -74,6 +74,7 @@
         "type": "point",
         "filled": true,
         "size": 200,
+        "colour":"#168c91",
         "stroke": "white",
         "strokeWidth": 1.5
       },
@@ -82,16 +83,19 @@
           "field": "area_numeric",
           "type": "quantitative"
         },
-        "color": {
-          "field": "year_label",
+        "shape": {
+          "field": "year",
           "type": "nominal",
           "scale": {
-            "domain": ["1988", "2024"],
-            "range": ["#79bcb4", "#174d43"]
+            "domain": [1988, 2024],
+            "range": ["circle", "square"]
           },
           "legend": {
             "title": "Year",
-            "orient": "bottom"
+            "orient": "bottom",
+            "symbolSize": 180
+          }
+        }
           }
         },
         "tooltip": [
