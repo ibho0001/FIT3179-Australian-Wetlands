@@ -57,11 +57,16 @@
           "field": "area_numeric",
           "type": "quantitative",
           "title": "Inland water coverage (hectares)",
-          "scale": {"zero": true},
-          "axis": {"format": "~s"}
+          "scale": {
+            "zero": true
+          },
+          "axis": {
+            "format": "~s"
+          }
         },
         "detail": {
-          "field": "water_type"
+          "field": "water_type",
+          "type": "nominal"
         },
         "order": {
           "field": "area_numeric",
@@ -74,7 +79,7 @@
         "type": "point",
         "filled": true,
         "size": 200,
-        "colour":"#168c91",
+        "color": "#168c91",
         "stroke": "white",
         "strokeWidth": 1.5
       },
@@ -84,10 +89,10 @@
           "type": "quantitative"
         },
         "shape": {
-          "field": "year",
+          "field": "year_label",
           "type": "nominal",
           "scale": {
-            "domain": [1988, 2024],
+            "domain": ["1988", "2024"],
             "range": ["circle", "square"]
           },
           "legend": {
@@ -95,12 +100,16 @@
             "orient": "bottom",
             "symbolSize": 180
           }
-        }
-          }
         },
         "tooltip": [
-          {"field": "water_type", "title": "Water body type"},
-          {"field": "year_label", "title": "Year"},
+          {
+            "field": "water_type",
+            "title": "Water body type"
+          },
+          {
+            "field": "year_label",
+            "title": "Year"
+          },
           {
             "field": "area_numeric",
             "title": "Coverage (ha)",
@@ -111,7 +120,9 @@
     }
   ],
   "config": {
-    "view": {"stroke": null},
+    "view": {
+      "stroke": null
+    },
     "background": "white"
   }
 }
